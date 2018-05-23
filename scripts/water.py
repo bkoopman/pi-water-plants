@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BOARD) # Broadcom pin-numbering scheme
 
 def get_last_watered():
     try:
-        f = open("last_watered.txt", "r")
+        f = open("last_watered", "r")
         return f.readline()
     except:
         return "NEVER!"
@@ -42,7 +42,7 @@ def auto_water(delay = 5, pump_pin = 7, water_sensor_pin = 8):
 
 def pump_on(pump_pin = 7, delay = 1):
     init_output(pump_pin)
-    f = open("last_watered.txt", "w")
+    f = open("last_watered", "w")
     f.write("Last watered {}".format(datetime.datetime.now()))
     f.close()
     GPIO.output(pump_pin, GPIO.LOW)
