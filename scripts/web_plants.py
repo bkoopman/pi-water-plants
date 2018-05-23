@@ -33,7 +33,7 @@ def action():
     if (status == 1):
         message = "Water me please!"
     else:
-        message = "I"m a happy plant"
+        message = "I'm a happy plant"
 
     templateData = template(text = message)
     return render_template("main.html", **templateData)
